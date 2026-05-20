@@ -503,14 +503,26 @@
     transform: rotate(45deg);
   }
  
-  /* Blog */
-  #blog { background: transparent; }
+  /* Certifications */
+  #certifications { background: transparent; }
+ 
+  .cert-category {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--text);
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
  
   .blog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    margin-top: 3.5rem;
+    margin-top: 1.5rem;
   }
  
   .blog-card {
@@ -766,7 +778,7 @@
   }
   .modal-overlay.open { display: flex; }
   .modal {
-    max-width: 680px;
+    max-width: 860px;
     width: 100%;
     max-height: 85vh;
     overflow-y: auto;
@@ -1124,7 +1136,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#works">Works</a></li>
-    <li><a href="#blog">Blog</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">GET IN TOUCH</a>
@@ -1145,7 +1157,7 @@
     </p>
     <div class="hero-btns">
       <a href="#works" class="btn-primary">View My Work ↓</a>
-      <a href="#blog" class="btn-outline">Read the Blog</a>
+      <a href="#certifications" class="btn-outline">View Certifications</a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -1289,57 +1301,109 @@
   </div>
 </section>
  
-<!-- BLOG -->
+<!-- CERTIFICATIONS -->
 <div class="divider"></div>
-<section id="blog">
+<section id="certifications">
   <div class="section-wrap" style="position:relative;">
     <div class="section-num">03</div>
     <div class="reveal">
-      <p class="section-label">The Blog</p>
-      <h2 class="section-title">Thoughts on <span class="hl">craft</span><br>& code.</h2>
+      <p class="section-label">The Experience</p>
+      <h2 class="section-title">Certifications &<br><span class="hl">Achievements</span></h2>
     </div>
- 
+
+    <h3 class="cert-category reveal">AI & Workshop Certificates</h3>
     <div class="blog-grid">
-      <div class="blog-card reveal" onclick="openPost(0)">
-        <div class="blog-date">MAY 12, 2026 · 8 MIN READ</div>
-        <h3 class="blog-title">Why Every Developer Should Learn GLSL in 2026</h3>
-        <p class="blog-excerpt">Fragment shaders have become the new CSS — once esoteric, now essential for anyone building memorable web experiences.</p>
-        <div class="blog-read">Read Article →</div>
+      <div class="blog-card reveal" onclick="openCert(0)">
+        <div class="blog-date">WORKSHOP</div>
+        <h3 class="blog-title">TCS Gen-AI</h3>
+        <div class="blog-read">View Certificate →</div>
       </div>
- 
-      <div class="blog-card reveal" onclick="openPost(1)">
-        <div class="blog-date">APR 28, 2026 · 6 MIN READ</div>
-        <h3 class="blog-title">The Art of Micro-Interaction: When Less Is Everything</h3>
-        <p class="blog-excerpt">A 200ms animation done right will do more for user trust than any feature roadmap. Here's how I think about it.</p>
-        <div class="blog-read">Read Article →</div>
+      <div class="blog-card reveal" onclick="openCert(1)">
+        <div class="blog-date">WORKSHOP</div>
+        <h3 class="blog-title">Cyberthreya Workshop</h3>
+        <div class="blog-read">View Certificate →</div>
       </div>
- 
-      <div class="blog-card reveal" onclick="openPost(2)">
-        <div class="blog-date">APR 10, 2026 · 12 MIN READ</div>
-        <h3 class="blog-title">Building a Spatial UI with React Three Fiber</h3>
-        <p class="blog-excerpt">A deep dive into creating fully 3D interfaces inside the React ecosystem without touching vanilla WebGL once.</p>
-        <div class="blog-read">Read Article →</div>
+      <div class="blog-card reveal" onclick="openCert(2)">
+        <div class="blog-date">WORKSHOP</div>
+        <h3 class="blog-title">Quantum Computing</h3>
+        <div class="blog-read">View Certificate →</div>
       </div>
- 
-      <div class="blog-card reveal" onclick="openPost(3)">
-        <div class="blog-date">MAR 25, 2026 · 5 MIN READ</div>
-        <h3 class="blog-title">Typography in the Dark: Pairing Fonts for Night Interfaces</h3>
-        <p class="blog-excerpt">Dark mode isn't just inverted colors. The fonts that shine on white collapse in darkness — here's what works instead.</p>
-        <div class="blog-read">Read Article →</div>
+    </div>
+
+    <h3 class="cert-category reveal">Course Completion Certificates</h3>
+    <div class="blog-grid">
+      <div class="blog-card reveal" onclick="openCert(3)">
+        <div class="blog-date">CERTIFICATION</div>
+        <h3 class="blog-title">AWS Cloud Foundations</h3>
+        <div class="blog-read">View Certificate →</div>
       </div>
- 
-      <div class="blog-card reveal" onclick="openPost(4)">
-        <div class="blog-date">MAR 8, 2026 · 9 MIN READ</div>
-        <h3 class="blog-title">Instanced Meshes: Rendering 100,000 Objects in WebGL</h3>
-        <p class="blog-excerpt">Performance deep-dive: how I rendered a 100k-point globe dataset at 60fps using instanced geometry and smart LOD.</p>
-        <div class="blog-read">Read Article →</div>
+      <div class="blog-card reveal" onclick="openCert(4)">
+        <div class="blog-date">COURSE</div>
+        <h3 class="blog-title">Cisco Python</h3>
+        <div class="blog-read">View Certificate →</div>
       </div>
- 
-      <div class="blog-card reveal" onclick="openPost(5)">
-        <div class="blog-date">FEB 19, 2026 · 7 MIN READ</div>
-        <h3 class="blog-title">Designing for the Empty State: Making Nothing Feel Intentional</h3>
-        <p class="blog-excerpt">The moments when your UI has nothing to show are the biggest trust-building opportunities you're probably wasting.</p>
-        <div class="blog-read">Read Article →</div>
+      <div class="blog-card reveal" onclick="openCert(5)">
+        <div class="blog-date">COURSE</div>
+        <h3 class="blog-title">Cisco C Language (Part 1)</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+      <div class="blog-card reveal" onclick="openCert(6)">
+        <div class="blog-date">COURSE</div>
+        <h3 class="blog-title">Cisco C Language (Part 2)</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+      <div class="blog-card reveal" onclick="openCert(7)">
+        <div class="blog-date">COURSE</div>
+        <h3 class="blog-title">Infosys Python Foundation</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+      <div class="blog-card reveal" onclick="openCert(8)">
+        <div class="blog-date">COURSE</div>
+        <h3 class="blog-title">Infosys Information Security</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+      <div class="blog-card reveal" onclick="openCert(9)">
+        <div class="blog-date">COURSE</div>
+        <h3 class="blog-title">Python OneRoadmap</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+      <div class="blog-card reveal" onclick="openCert(10)">
+        <div class="blog-date">CERTIFICATION</div>
+        <h3 class="blog-title">Oracle Certification</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+    </div>
+
+    <h3 class="cert-category reveal">Internship Certificates</h3>
+    <div class="blog-grid">
+      <div class="blog-card reveal" onclick="openCert(11)">
+        <div class="blog-date">INTERNSHIP</div>
+        <h3 class="blog-title">Eduskills Fullstack</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+      <div class="blog-card reveal" onclick="openCert(12)">
+        <div class="blog-date">INTERNSHIP</div>
+        <h3 class="blog-title">Deloitte</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+    </div>
+
+    <h3 class="cert-category reveal">Technical Event Certificates</h3>
+    <div class="blog-grid">
+      <div class="blog-card reveal" onclick="openCert(13)">
+        <div class="blog-date">HACKATHON</div>
+        <h3 class="blog-title">GDG Techsprint</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+      <div class="blog-card reveal" onclick="openCert(14)">
+        <div class="blog-date">HACKATHON</div>
+        <h3 class="blog-title">HackerRank</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+      <div class="blog-card reveal" onclick="openCert(15)">
+        <div class="blog-date">BADGE</div>
+        <h3 class="blog-title">AWS Academy</h3>
+        <div class="blog-read">View Certificate →</div>
       </div>
     </div>
   </div>
@@ -1679,70 +1743,46 @@ animate();
   pvAnimate();
 })();
  
-// ─── Blog posts data ───────────────────────────────────────────────────────
-const posts = [
-  {
-    date: 'MAY 12, 2026 · 8 MIN READ',
-    title: 'Why Every Developer Should Learn GLSL in 2026',
-    body: `<p><strong>Fragment shaders have crossed a threshold.</strong> They're no longer the domain of game developers or hardcore graphics programmers. In 2026, they're the secret weapon of web developers who want to build things that feel impossible.</p>
-<p>I resisted GLSL for years. The syntax felt alien, the math was intimidating, and JavaScript was doing just fine. Then I tried to build a certain particle effect and realized CSS had a ceiling — and I'd hit it.</p>
-<p>Here's the thing about shaders: once you understand that you're writing code that runs once per pixel, in parallel, on thousands of cores simultaneously, the mental model clicks. You're not thinking about loops. You're thinking about math that transforms space.</p>
-<p><strong>Start here:</strong> The Book of Shaders by Patricio Gonzalez Vivo is still the best introduction. Write one shader per day for 30 days. By the end, your brain will have rewired itself to see the world in gradients and distance functions.</p>
-<p>The web needs more beautiful things. GLSL is one of the keys.</p>`
-  },
-  {
-    date: 'APR 28, 2026 · 6 MIN READ',
-    title: 'The Art of Micro-Interaction: When Less Is Everything',
-    body: `<p>There's a hover state on a button somewhere on your site right now that's doing nothing interesting. It probably changes color. Maybe scales slightly. It's fine. It's forgettable.</p>
-<p><strong>The best micro-interactions are ones users don't consciously notice</strong> — they just feel right. The 200ms ease-out on a dropdown that makes it feel like it has weight. The subtle resistance when you try to delete something important. The haptic-like bounce on a toggle switch.</p>
-<p>I've spent embarrassing amounts of time on animations that never made it into the final product because they were wrong by 20ms or 2 pixels. That time wasn't wasted. It trained my eye to see the difference between polished and almost-polished.</p>
-<p>Here's my framework: every interaction should communicate something. If the animation isn't conveying feedback, delight, or causality — cut it. Motion that exists purely for decoration is noise. Motion that teaches the user something about how the interface works is gold.</p>
-<p>The easiest win in most products? Make the exit animation slower than the entry. Things should land fast and leave gracefully.</p>`
-  },
-  {
-    date: 'APR 10, 2026 · 12 MIN READ',
-    title: 'Building a Spatial UI with React Three Fiber',
-    body: `<p><strong>What if your entire app existed in 3D space?</strong> Not as a gimmick, but as a genuinely better way to navigate complex information hierarchies. That's the question I started with building the Nebula design system.</p>
-<p>React Three Fiber (R3F) makes this question answerable without losing your mind. It lets you write JSX that compiles to Three.js, meaning your entire mental model of components, state, and effects applies to a 3D scene.</p>
-<p>The hardest part isn't the 3D. It's deciding what should be 3D and what shouldn't. Spatial UIs fail when designers try to put everything in space. They succeed when 3D is used exclusively for things that benefit from depth — relationships between objects, hierarchical navigation, data that genuinely has a third dimension.</p>
-<p><strong>Key libraries for this stack:</strong> R3F for the scene graph, Drei for pre-built helpers, Leva for debug controls, and Zustand for state that lives outside the canvas. Use @react-spring/three for physics-based animations that feel alive.</p>
-<p>The future of interfaces isn't flat. But it's not arbitrarily spatial either. It's intentionally spatial — and there's a huge difference.</p>`
-  },
-  {
-    date: 'MAR 25, 2026 · 5 MIN READ',
-    title: 'Typography in the Dark: Pairing Fonts for Night Interfaces',
-    body: `<p>Dark mode typography is hard because we've spent decades optimizing type for light surfaces. The same font that reads beautifully on white can collapse in darkness — letters bleed, thin strokes disappear, and optical balance shifts entirely.</p>
-<p><strong>The first rule:</strong> avoid ultra-thin weights in dark mode. What looks elegant at 300 weight on white looks invisible on near-black. 400 is your new floor; 300 is for decoration only, and only at large sizes.</p>
-<p>For display text, switch from geometric sans-serifs to humanist or transitional options. Fonts like Syne, Canela, or Editorial New have optical weight that survives the darkness. They were designed with contrast in mind, not just geometry.</p>
-<p>For body text, slightly increase letter-spacing (0.01–0.02em more than your light mode setting) and bump line height. Eyes scanning bright text on dark backgrounds fatigue faster, so give them room to breathe.</p>
-<p>Finally: your dark mode muted color probably isn't muted enough, or it's too muted. The sweet spot for secondary text on dark backgrounds is around 55–60% brightness — visible but clearly subordinate. Get this right and your hierarchy will sing.</p>`
-  },
-  {
-    date: 'MAR 8, 2026 · 9 MIN READ',
-    title: 'Instanced Meshes: Rendering 100,000 Objects in WebGL',
-    body: `<p>The naive approach to rendering lots of objects in Three.js is to create lots of meshes. This works great until around 5,000 objects, at which point your frame rate falls off a cliff. Each mesh is a separate draw call to the GPU, and draw calls are expensive.</p>
-<p><strong>Instanced meshes</strong> are the solution. Instead of 100,000 separate draw calls, you make one draw call with a transformation matrix for each instance. The GPU loves this. Your frame rate does too.</p>
-<p>The API is slightly more complex — you set a matrix at each index rather than just setting position and rotation on a mesh. But the pattern becomes second nature quickly:</p>
-<p>Create an InstancedMesh with the geometry, material, and count. For each instance, create a Matrix4, set its position/rotation/scale, and apply it with setMatrixAt(). Don't forget to set instanceMatrix.needsUpdate = true after your changes.</p>
-<p>For the globe project, I combined this with a spatial index (an octree) to cull objects outside the view frustum before even sending them to the GPU. Combined with instancing, this took a 12fps render of 100k data points to a solid 60fps on mid-range hardware.</p>
-<p>The GPU is extraordinarily powerful. Most WebGL performance problems are CPU-side bottlenecks getting in its way.</p>`
-  },
-  {
-    date: 'FEB 19, 2026 · 7 MIN READ',
-    title: 'Designing for the Empty State: Making Nothing Feel Intentional',
-    body: `<p>The empty state is the most underdesigned part of almost every product. It's the screen users see when they first arrive, when they've cleared everything out, when a search returns nothing. It's the beginning and the nadir of the experience.</p>
-<p><strong>Most empty states commit the same sin:</strong> they're designed last, by whoever had time, after the "real" work was done. The result is a gray illustration, some placeholder text that starts with "No [noun] yet!", and a button that says "Create your first [noun]".</p>
-<p>I've started treating empty states as the first impression. What does this space look like before the user has done anything? What does it promise? What story does it tell about what's possible?</p>
-<p>The best empty states I've ever seen do three things: they acknowledge the user's current situation without making them feel bad about it, they paint a picture of what this space will look like when it's full, and they give a single, clear, compelling action to take.</p>
-<p>The hardest part is the last one. Most empty states offer too many options. Whitespace is terrifying to product teams, so they fill it with options and suggestions. Resist this. One action. Make it the right one. Make the empty state want to be filled.</p>`
-  }
+// ─── Certifications data ───────────────────────────────────────────────────────
+const certs = [
+  // AI & Workshops (0, 1, 2)
+  { title: "TCS Gen-AI", file: "tcs gen-ai.pdf", type: "pdf" },
+  { title: "Cyberthreya Workshop", file: "cyberthreya.pdf", type: "pdf" },
+  { title: "Quantum Computing", file: "quantum computing.pdf", type: "pdf" },
+  
+  // Courses (3, 4, 5, 6, 7, 8, 9, 10)
+  { title: "AWS Cloud Foundations", file: "AWS Cloud Foundations Certificate.pdf", type: "pdf" },
+  { title: "Cisco Python", file: "cisco python.pdf", type: "pdf" },
+  { title: "Cisco C Language (Part 1)", file: "cisco c lang1.pdf", type: "pdf" },
+  { title: "Cisco C Language (Part 2)", file: "cisco c lang2.pdf", type: "pdf" },
+  { title: "Infosys Python Foundation", file: "infosys springboard - python foundation.pdf", type: "pdf" },
+  { title: "Infosys Information Security", file: "infosys springboard - informational security.pdf", type: "pdf" },
+  { title: "Python OneRoadmap", file: "Python-Certificate oneroadmap.pdf", type: "pdf" },
+  { title: "Oracle Certification", file: "kartheek oracle.pdf", type: "pdf" },
+  
+  // Internships (11, 12)
+  { title: "Eduskills Fullstack Internship", file: "eduskills_pyp_fullstack_Certificate.pdf", type: "pdf" },
+  { title: "Deloitte Internship", file: "deloitte certify.pdf", type: "pdf" },
+  
+  // Technical Events (13, 14, 15)
+  { title: "GDG Techsprint Hackathon", file: "gdg techsprint hackathon.pdf", type: "pdf" },
+  { title: "HackerRank Hackathon", file: "hackerank hackathon.png", type: "img" },
+  { title: "AWS Academy Badge", file: "aws-academy-graduate-cloud-foundations-training-bad.png", type: "img" }
 ];
- 
-function openPost(idx) {
-  const p = posts[idx];
-  document.getElementById('modal-date').textContent = p.date;
-  document.getElementById('modal-title').textContent = p.title;
-  document.getElementById('modal-body').innerHTML = p.body;
+
+function openCert(idx) {
+  const c = certs[idx];
+  document.getElementById('modal-date').textContent = "CERTIFICATE PREVIEW";
+  document.getElementById('modal-title').textContent = c.title;
+  
+  let content = "";
+  if (c.type === "pdf") {
+    content = `<iframe src="${c.file}" width="100%" height="600px" style="border:none; border-radius: 4px; background: #fff;"></iframe>`;
+  } else {
+    content = `<img src="${c.file}" style="width: 100%; border-radius: 4px; object-fit: contain;">`;
+  }
+  
+  document.getElementById('modal-body').innerHTML = content;
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -1795,7 +1835,7 @@ window.addEventListener('scroll', () => {
   btt.classList.toggle('show', window.scrollY > 400);
  
   // Active nav link
-  const sections = ['hero','about','works','blog','contact'];
+  const sections = ['hero','about','works','certifications','contact'];
   let current = 'hero';
   sections.forEach(id => {
     const el = document.getElementById(id);
