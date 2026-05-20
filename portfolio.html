@@ -1323,51 +1323,61 @@
         <h3 class="blog-title">Cyberthreya Workshop</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
-      <div class="blog-card reveal" onclick="openCert(2)">
-        <div class="blog-date">WORKSHOP</div>
-        <h3 class="blog-title">Quantum Computing</h3>
-        <div class="blog-read">View Certificate →</div>
-      </div>
     </div>
 
     <h3 class="cert-category reveal">Course Completion Certificates</h3>
     <div class="blog-grid">
-      <div class="blog-card reveal" onclick="openCert(3)">
+      <div class="blog-card reveal" onclick="openCert(2)">
         <div class="blog-date">CERTIFICATION</div>
         <h3 class="blog-title">AWS Cloud Foundations</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
+      <div class="blog-card reveal" onclick="openCert(3)">
+        <div class="blog-date">BADGE</div>
+        <h3 class="blog-title">AWS Academy Graduate</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
       <div class="blog-card reveal" onclick="openCert(4)">
-        <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Cisco Python</h3>
+        <div class="blog-date">CERTIFICATION</div>
+        <h3 class="blog-title">NPTEL Cloud Computing</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
       <div class="blog-card reveal" onclick="openCert(5)">
-        <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Cisco C Language (Part 1)</h3>
+        <div class="blog-date">CERTIFICATION</div>
+        <h3 class="blog-title">Quantum Fundamentals</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
       <div class="blog-card reveal" onclick="openCert(6)">
         <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Cisco C Language (Part 2)</h3>
+        <h3 class="blog-title">Cisco Python</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
       <div class="blog-card reveal" onclick="openCert(7)">
         <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Infosys Python Foundation</h3>
+        <h3 class="blog-title">Cisco C Language (Part 1)</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
       <div class="blog-card reveal" onclick="openCert(8)">
         <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Infosys Information Security</h3>
+        <h3 class="blog-title">Cisco C Language (Part 2)</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
       <div class="blog-card reveal" onclick="openCert(9)">
         <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Python OneRoadmap</h3>
+        <h3 class="blog-title">Infosys Python Foundation</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
       <div class="blog-card reveal" onclick="openCert(10)">
+        <div class="blog-date">COURSE</div>
+        <h3 class="blog-title">Infosys Information Security</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+      <div class="blog-card reveal" onclick="openCert(11)">
+        <div class="blog-date">COURSE</div>
+        <h3 class="blog-title">Python OneRoadmap</h3>
+        <div class="blog-read">View Certificate →</div>
+      </div>
+      <div class="blog-card reveal" onclick="openCert(12)">
         <div class="blog-date">CERTIFICATION</div>
         <h3 class="blog-title">Oracle Certification</h3>
         <div class="blog-read">View Certificate →</div>
@@ -1376,12 +1386,12 @@
 
     <h3 class="cert-category reveal">Internship Certificates</h3>
     <div class="blog-grid">
-      <div class="blog-card reveal" onclick="openCert(11)">
+      <div class="blog-card reveal" onclick="openCert(13)">
         <div class="blog-date">INTERNSHIP</div>
         <h3 class="blog-title">Eduskills Fullstack</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
-      <div class="blog-card reveal" onclick="openCert(12)">
+      <div class="blog-card reveal" onclick="openCert(14)">
         <div class="blog-date">INTERNSHIP</div>
         <h3 class="blog-title">Deloitte</h3>
         <div class="blog-read">View Certificate →</div>
@@ -1390,19 +1400,14 @@
 
     <h3 class="cert-category reveal">Technical Event Certificates</h3>
     <div class="blog-grid">
-      <div class="blog-card reveal" onclick="openCert(13)">
+      <div class="blog-card reveal" onclick="openCert(15)">
         <div class="blog-date">HACKATHON</div>
         <h3 class="blog-title">GDG Techsprint</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
-      <div class="blog-card reveal" onclick="openCert(14)">
+      <div class="blog-card reveal" onclick="openCert(16)">
         <div class="blog-date">HACKATHON</div>
         <h3 class="blog-title">HackerRank</h3>
-        <div class="blog-read">View Certificate →</div>
-      </div>
-      <div class="blog-card reveal" onclick="openCert(15)">
-        <div class="blog-date">BADGE</div>
-        <h3 class="blog-title">AWS Academy</h3>
         <div class="blog-read">View Certificate →</div>
       </div>
     </div>
@@ -1745,13 +1750,15 @@ animate();
  
 // ─── Certifications data ───────────────────────────────────────────────────────
 const certs = [
-  // AI & Workshops (0, 1, 2)
+  // AI & Workshops (0, 1)
   { title: "TCS Gen-AI", file: "tcs gen-ai.pdf", type: "pdf" },
   { title: "Cyberthreya Workshop", file: "cyberthreya.pdf", type: "pdf" },
-  { title: "Quantum Computing", file: "quantum computing.pdf", type: "pdf" },
   
-  // Courses (3, 4, 5, 6, 7, 8, 9, 10)
+  // Courses (2 to 12)
   { title: "AWS Cloud Foundations", file: "AWS Cloud Foundations Certificate.pdf", type: "pdf" },
+  { title: "AWS Academy Graduate", file: "aws-academy-graduate-cloud-foundations-training-bad.png", type: "img" },
+  { title: "NPTEL Cloud Computing", file: "nptel_cloud_computing.png", type: "img" },
+  { title: "Quantum Fundamentals", file: "quantum computing.pdf", type: "pdf" },
   { title: "Cisco Python", file: "cisco python.pdf", type: "pdf" },
   { title: "Cisco C Language (Part 1)", file: "cisco c lang1.pdf", type: "pdf" },
   { title: "Cisco C Language (Part 2)", file: "cisco c lang2.pdf", type: "pdf" },
@@ -1760,14 +1767,13 @@ const certs = [
   { title: "Python OneRoadmap", file: "Python-Certificate oneroadmap.pdf", type: "pdf" },
   { title: "Oracle Certification", file: "kartheek oracle.pdf", type: "pdf" },
   
-  // Internships (11, 12)
+  // Internships (13, 14)
   { title: "Eduskills Fullstack Internship", file: "eduskills_pyp_fullstack_Certificate.pdf", type: "pdf" },
   { title: "Deloitte Internship", file: "deloitte certify.pdf", type: "pdf" },
   
-  // Technical Events (13, 14, 15)
+  // Technical Events (15, 16)
   { title: "GDG Techsprint Hackathon", file: "gdg techsprint hackathon.pdf", type: "pdf" },
-  { title: "HackerRank Hackathon", file: "hackerank hackathon.png", type: "img" },
-  { title: "AWS Academy Badge", file: "aws-academy-graduate-cloud-foundations-training-bad.png", type: "img" }
+  { title: "HackerRank Hackathon", file: "hackerank hackathon.png", type: "img" }
 ];
 
 function openCert(idx) {
