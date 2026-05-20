@@ -1863,13 +1863,15 @@ function submitForm() {
   btn.innerHTML = 'SENDING...';
   btn.style.pointerEvents = 'none';
 
-  fetch("https://formsubmit.co/ajax/divyasreeb29@gmail.com", {
+  // Make sure to replace YOUR_ACCESS_KEY_HERE with your actual Web3Forms access key
+  fetch("https://api.web3forms.com/submit", {
     method: "POST",
     headers: { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
     },
     body: JSON.stringify({
+        access_key: "YOUR_ACCESS_KEY_HERE",
         name: name,
         email: email,
         message: msg
@@ -1877,12 +1879,17 @@ function submitForm() {
   })
   .then(response => response.json())
   .then(data => {
-    const succ = document.getElementById('cf-success');
-    succ.style.display = 'block';
-    document.getElementById('cf-name').value = '';
-    document.getElementById('cf-email').value = '';
-    document.getElementById('cf-msg').value = '';
-    setTimeout(() => { succ.style.display = 'none'; }, 5000);
+    if (data.success) {
+      const succ = document.getElementById('cf-success');
+      succ.style.display = 'block';
+      document.getElementById('cf-name').value = '';
+      document.getElementById('cf-email').value = '';
+      document.getElementById('cf-msg').value = '';
+      setTimeout(() => { succ.style.display = 'none'; }, 5000);
+    } else {
+      console.error(data);
+      alert("Please configure your Web3Forms access key in the code.");
+    }
   })
   .catch(error => {
     console.error(error);
