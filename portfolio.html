@@ -506,96 +506,223 @@
   /* Certifications */
   #certifications { background: transparent; }
  
-  .cert-category {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    color: var(--text);
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.5rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  .cert-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
   }
  
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
- 
-  .blog-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1.75rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    position: relative;
-  }
-  .blog-card:hover { border-color: rgba(79,124,255,0.3); transform: translateY(-4px); }
- 
-  .blog-date {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: var(--muted);
-    letter-spacing: 0.12em;
-    margin-bottom: 0.8rem;
-  }
-  .blog-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.4;
-    margin-bottom: 0.75rem;
-    transition: color 0.2s;
-  }
-  .blog-card:hover .blog-title { color: var(--accent); }
-
-  .blog-excerpt {
+  .cert-intro p {
+    max-width: 740px;
     font-family: var(--font-serif);
-    font-size: 0.88rem;
-    font-style: italic;
+    font-size: 1rem;
     color: rgba(232,234,246,0.75);
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
+    line-height: 1.8;
   }
  
-  .cert-view {
+  .cert-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+ 
+  .cert-type-pill {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.85rem 1rem;
-    border-radius: 999px;
-    border: 1px solid rgba(79,124,255,0.35);
-    background: rgba(79,124,255,0.08);
+    background: rgba(79,124,255,0.12);
     color: var(--accent);
+    border: 1px solid rgba(79,124,255,0.22);
+    border-radius: 999px;
+    padding: 0.55rem 1rem;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+  }
+ 
+  .cert-category {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+ 
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+ 
+  .cert-card {
+    background: linear-gradient(180deg, rgba(9,13,24,0.94), rgba(14,18,34,0.95));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 18px;
+    padding: 1.75rem;
+    box-shadow: 0 32px 80px rgba(15, 26, 52, 0.18);
     cursor: pointer;
-    transition: transform 0.2s, background 0.2s, border-color 0.2s;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
-  .cert-view:hover {
-    transform: translateY(-1px);
-    background: rgba(79,124,255,0.16);
-    border-color: rgba(79,124,255,0.65);
+  .cert-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(79,124,255,0.24);
+    box-shadow: 0 40px 100px rgba(15, 26, 52, 0.28);
   }
-
-  .blog-read {
+  .cert-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(79,124,255,0.12), transparent 28%);
+    pointer-events: none;
+  }
+ 
+  .cert-card-inner {
+    position: relative;
+    z-index: 1;
+  }
+ 
+  .cert-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: var(--font-mono);
     font-size: 0.68rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.18em;
     color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+ 
+  .cert-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+ 
+  .cert-subtitle {
+    font-family: var(--font-serif);
+    color: rgba(232,234,246,0.7);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+ 
+  .cert-footer {
     display: flex;
     align-items: center;
-    gap: 6px;
-    text-transform: uppercase;
-    transition: gap 0.2s;
+    justify-content: space-between;
+    gap: 1rem;
   }
-  .blog-card:hover .blog-read { gap: 10px; }
+ 
+  .cert-meta {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+ 
+  .cert-action {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--accent);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+ 
+  /* Modal preview */
+  .modal {
+    max-width: 1100px;
+    width: 100%;
+    max-height: 92vh;
+    overflow: hidden;
+    background: rgba(6,8,17,0.98);
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0;
+  }
+  .modal-content {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    min-height: 600px;
+  }
+  .modal-side {
+    padding: 2rem;
+    background: rgba(9,13,24,0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .modal-side h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.65rem;
+  }
+  .modal-side p {
+    font-family: var(--font-serif);
+    color: rgba(232,234,246,0.75);
+    line-height: 1.8;
+  }
+  .modal-side .modal-meta {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .modal-side .modal-meta span {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .modal-preview {
+    position: relative;
+    overflow: hidden;
+    background: #090d18;
+  }
+  .modal-preview iframe,
+  .modal-preview img,
+  .modal-preview .preview-placeholder {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: contain;
+    display: block;
+  }
+  .preview-placeholder {
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    color: rgba(232,234,246,0.72);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(79,124,255,0.08), transparent);
+  }
+  .modal-close {
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  @media (max-width: 980px) {
+    .cert-grid { grid-template-columns: 1fr; }
+    .modal-content { grid-template-columns: 1fr; min-height: auto; }
+    .modal-side { padding: 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .cert-intro { flex-direction: column; }
+    .cert-types { justify-content: flex-start; }
+    .cert-category { margin-top: 2rem; }
+  }
  
   /* Contact */
   #contact {
@@ -800,35 +927,26 @@
   }
   .modal-overlay.open { display: flex; }
   .modal {
-    max-width: 1000px;
-    width: min(100%, 96vw);
-    max-height: calc(100vh - 2rem);
-    overflow: hidden;
+    max-width: 860px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.5rem;
+    border-radius: 6px;
+    padding: 2.5rem;
     position: relative;
   }
   .modal-close {
     position: absolute;
-    top: 1rem; right: 1rem;
+    top: 1.5rem; right: 1.5rem;
     background: none;
     border: none;
     color: var(--muted);
     cursor: pointer;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1;
     transition: color 0.2s;
-  }
-  .modal-body iframe,
-  .modal-body img {
-    width: 100%;
-    min-height: 80vh;
-    max-height: calc(100vh - 9rem);
-    border-radius: 6px;
-    object-fit: contain;
-    background: #07101f;
   }
   .modal-close:hover { color: var(--text); }
   .modal-date {
@@ -1342,119 +1460,143 @@
       <h2 class="section-title">Certifications &<br><span class="hl">Achievements</span></h2>
     </div>
 
-    <h3 class="cert-category reveal">AI & Workshop Participations</h3>
-    <div class="blog-grid">
-      <div class="blog-card reveal">
-        <div class="blog-date">WORKSHOP</div>
-        <h3 class="blog-title">TCS Gen-AI</h3>
-        <p class="blog-excerpt">Participation certificate for the TCS Gen-AI workshop.</p>
-        <button class="cert-view" onclick="openCert(0)">View Certificate</button>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">WORKSHOP</div>
-        <h3 class="blog-title">Cyberthreya Workshop</h3>
-        <p class="blog-excerpt">Certificate for attending the Cyberthreya security workshop.</p>
-        <button class="cert-view" onclick="openCert(1)">View Certificate</button>
+    <div class="cert-intro reveal">
+      <p>Curated certificates organized into four pillars: AI workshops, course completions, technical event achievements, and internships. Tap any card to open a detailed maximized preview right inside the page.</p>
+      <div class="cert-types">
+        <span class="cert-type-pill">AI & Workshops</span>
+        <span class="cert-type-pill">Course Completion</span>
+        <span class="cert-type-pill">Technical Events</span>
+        <span class="cert-type-pill">Internships</span>
       </div>
     </div>
 
-    <h3 class="cert-category reveal">Course Completion Certificates</h3>
-    <div class="blog-grid">
-      <div class="blog-card reveal">
-        <div class="blog-date">CERTIFICATION</div>
-        <h3 class="blog-title">AWS Cloud Foundations</h3>
-        <p class="blog-excerpt">Completed AWS Cloud Foundations training and certification.</p>
-        <button class="cert-view" onclick="openCert(2)">View Certificate</button>
+    <h3 class="cert-category reveal">AI & Workshops</h3>
+    <div class="cert-grid">
+      <div class="cert-card reveal" onclick="openCert(0)">
+        <div class="cert-card-inner">
+          <div class="cert-label">Workshop</div>
+          <h3 class="cert-title">TCS Gen-AI Workshop</h3>
+          <p class="cert-subtitle">Practical workshop focused on generative AI workflows and prompt engineering.</p>
+          <div class="cert-footer">
+            <span class="cert-meta">May 2026</span>
+            <span class="cert-action">View certificate</span>
+          </div>
+        </div>
       </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">BADGE</div>
-        <h3 class="blog-title">AWS Academy Graduate</h3>
-        <p class="blog-excerpt">Digital badge for AWS Academy Graduate Cloud Foundations.</p>
-        <button class="cert-view" onclick="openCert(3)">View Certificate</button>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">CERTIFICATION</div>
-        <h3 class="blog-title">Quantum Fundamentals</h3>
-        <p class="blog-excerpt">Certificate for completing the Quantum Fundamentals program.</p>
-        <button class="cert-view" onclick="openCert(4)">View Certificate</button>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Cisco Python</h3>
-        <p class="blog-excerpt">Course completion certificate for Cisco Python training.</p>
-        <button class="cert-view" onclick="openCert(5)">View Certificate</button>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Cisco C Language (Part 1)</h3>
-        <p class="blog-excerpt">Course completion certificate for Cisco C Language part 1.</p>
-        <button class="cert-view" onclick="openCert(6)">View Certificate</button>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Cisco C Language (Part 2)</h3>
-        <p class="blog-excerpt">Course completion certificate for Cisco C Language part 2.</p>
-        <button class="cert-view" onclick="openCert(7)">View Certificate</button>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Infosys Python Foundation</h3>
-        <p class="blog-excerpt">Certificate for the Infosys Springboard Python Foundation course.</p>
-        <button class="cert-view" onclick="openCert(8)">View Certificate</button>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Infosys Information Security</h3>
-        <p class="blog-excerpt">Certificate for the Infosys Springboard Information Security course.</p>
-        <button class="cert-view" onclick="openCert(9)">View Certificate</button>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">COURSE</div>
-        <h3 class="blog-title">Python OneRoadmap</h3>
-        <p class="blog-excerpt">Certificate for completing the OneRoadmap Python program.</p>
-        <button class="cert-view" onclick="openCert(10)">View Certificate</button>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">CERTIFICATION</div>
-        <h3 class="blog-title">Oracle Certification</h3>
-        <p class="blog-excerpt">Oracle certification document for technical skills validation.</p>
-        <button class="cert-view" onclick="openCert(11)">View Certificate</button>
+      <div class="cert-card reveal" onclick="openCert(1)">
+        <div class="cert-card-inner">
+          <div class="cert-label">Workshop</div>
+          <h3 class="cert-title">Cyberthreya Workshop</h3>
+          <p class="cert-subtitle">Hands-on session on cybersecurity fundamentals and defensive tooling.</p>
+          <div class="cert-footer">
+            <span class="cert-meta">2026</span>
+            <span class="cert-action">View certificate</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <h3 class="cert-category reveal">Internship Certificates</h3>
-    <div class="blog-grid">
-      <div class="blog-card reveal">
-        <div class="blog-date">INTERNSHIP</div>
-        <h3 class="blog-title">Eduskills Fullstack Internship</h3>
-        <p class="blog-excerpt">Completion certificate for Eduskills fullstack internship program.</p>
-        <button class="cert-view" onclick="openCert(12)">View Certificate</button>
+    <h3 class="cert-category reveal">Course Completion</h3>
+    <div class="cert-grid">
+      <div class="cert-card reveal" onclick="openCert(2)">
+        <div class="cert-card-inner">
+          <div class="cert-label">Certification</div>
+          <h3 class="cert-title">AWS Cloud Foundations</h3>
+          <p class="cert-subtitle">Completed cloud fundamentals training through AWS Academy.</p>
+          <div class="cert-footer">
+            <span class="cert-meta">November 2025</span>
+            <span class="cert-action">View certificate</span>
+          </div>
+        </div>
       </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">INTERNSHIP</div>
-        <h3 class="blog-title">Deloitte Technology Job Simulation</h3>
-        <p class="blog-excerpt">Certificate for completing the Deloitte technology job simulation.</p>
-        <button class="cert-view" onclick="openCert(13)">View Certificate</button>
+      <div class="cert-card reveal" onclick="openCert(3)">
+        <div class="cert-card-inner">
+          <div class="cert-label">Badge</div>
+          <h3 class="cert-title">AWS Academy Graduate</h3>
+          <p class="cert-subtitle">Graduate badge for the AWS Academy Cloud Foundations program.</p>
+          <div class="cert-footer">
+            <span class="cert-meta">November 2025</span>
+            <span class="cert-action">View badge</span>
+          </div>
+        </div>
+      </div>
+      <div class="cert-card reveal" onclick="openCert(4)">
+        <div class="cert-card-inner">
+          <div class="cert-label">Certification</div>
+          <h3 class="cert-title">NPTEL Cloud Computing</h3>
+          <p class="cert-subtitle">Elite certification from the NPTEL Cloud Computing course.</p>
+          <div class="cert-footer">
+            <span class="cert-meta">Jul-Oct 2025</span>
+            <span class="cert-action">View certificate</span>
+          </div>
+        </div>
+      </div>
+      <div class="cert-card reveal" onclick="openCert(5)">
+        <div class="cert-card-inner">
+          <div class="cert-label">Certification</div>
+          <h3 class="cert-title">Quantum Fundamentals</h3>
+          <p class="cert-subtitle">Completion certificate for the four-week quantum fundamentals program.</p>
+          <div class="cert-footer">
+            <span class="cert-meta">2025-2026</span>
+            <span class="cert-action">View certificate</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <h3 class="cert-category reveal">Technical Event Participations</h3>
-    <div class="blog-grid">
-      <div class="blog-card reveal">
-        <div class="blog-date">HACKATHON</div>
-        <h3 class="blog-title">GDG Techsprint</h3>
-        <p class="blog-excerpt">Participation certificate for the GDG Techsprint event.</p>
-        <button class="cert-view" onclick="openCert(14)">View Certificate</button>
+    <h3 class="cert-category reveal">Internships</h3>
+    <div class="cert-grid">
+      <div class="cert-card reveal" onclick="openCert(6)">
+        <div class="cert-card-inner">
+          <div class="cert-label">Internship</div>
+          <h3 class="cert-title">Eduskills Fullstack</h3>
+          <p class="cert-subtitle">Practical full-stack internship experience with end-to-end product work.</p>
+          <div class="cert-footer">
+            <span class="cert-meta">2026</span>
+            <span class="cert-action">View certificate</span>
+          </div>
+        </div>
       </div>
-      <div class="blog-card reveal">
-        <div class="blog-date">HACKATHON</div>
-        <h3 class="blog-title">HackerRank</h3>
-        <p class="blog-excerpt">Certificate for HackerRank challenge participation.</p>
-        <button class="cert-view" onclick="openCert(15)">View Certificate</button>
+      <div class="cert-card reveal" onclick="openCert(7)">
+        <div class="cert-card-inner">
+          <div class="cert-label">Internship</div>
+          <h3 class="cert-title">Deloitte Technology Simulation</h3>
+          <p class="cert-subtitle">Certificate of completion for Deloitte’s hands-on tech job simulation.</p>
+          <div class="cert-footer">
+            <span class="cert-meta">May 2026</span>
+            <span class="cert-action">View certificate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="cert-category reveal">Technical Events</h3>
+    <div class="cert-grid">
+      <div class="cert-card reveal" onclick="openCert(8)">
+        <div class="cert-card-inner">
+          <div class="cert-label">Hackathon</div>
+          <h3 class="cert-title">GDG Techsprint</h3>
+          <p class="cert-subtitle">Certified participation in the GDG Techsprint event.</p>
+          <div class="cert-footer">
+            <span class="cert-meta">2026</span>
+            <span class="cert-action">View certificate</span>
+          </div>
+        </div>
+      </div>
+      <div class="cert-card reveal" onclick="openCert(9)">
+        <div class="cert-card-inner">
+          <div class="cert-label">Hackathon</div>
+          <h3 class="cert-title">HackerRank GenZPulse</h3>
+          <p class="cert-subtitle">Certificate for participation in the 26-hour HackerRank GenZPulse hackathon.</p>
+          <div class="cert-footer">
+            <span class="cert-meta">Jan 2026</span>
+            <span class="cert-action">View certificate</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
- 
+
   <div class="ticker-wrap reveal">
     <div class="ticker-inner" id="ticker"></div>
   </div>
@@ -1792,45 +1934,40 @@ animate();
  
 // ─── Certifications data ───────────────────────────────────────────────────────
 const certs = [
-  // AI & Workshops (0, 1)
-  { title: "TCS Gen-AI", file: "tcs gen-ai.pdf", type: "pdf" },
-  { title: "Cyberthreya Workshop", file: "cyberthreya.pdf", type: "pdf" },
-
-  // Courses (2 to 11)
-  { title: "AWS Cloud Foundations", file: "AWS Cloud Foundations Certificate.pdf", type: "pdf" },
-  { title: "AWS Academy Graduate", file: "aws-academy-graduate-cloud-foundations-training-bad.png", type: "img" },
-  { title: "Quantum Fundamentals", file: "quantum computing.pdf", type: "pdf" },
-  { title: "Cisco Python", file: "cisco python.pdf", type: "pdf" },
-  { title: "Cisco C Language (Part 1)", file: "cisco c lang1.pdf", type: "pdf" },
-  { title: "Cisco C Language (Part 2)", file: "cisco c lang2.pdf", type: "pdf" },
-  { title: "Infosys Python Foundation", file: "infosys springboard - python foundation.pdf", type: "pdf" },
-  { title: "Infosys Information Security", file: "infosys springboard - informational security.pdf", type: "pdf" },
-  { title: "Python OneRoadmap", file: "Python-Certificate oneroadmap.pdf", type: "pdf" },
-  { title: "Oracle Certification", file: "kartheek oracle.pdf", type: "pdf" },
-
-  // Internships (12, 13)
-  { title: "Eduskills Fullstack Internship", file: "eduskills_pyp_fullstack_Certificate.pdf", type: "pdf" },
-  { title: "Deloitte Technology Job Simulation", file: "deloitte certify.pdf", type: "pdf" },
-
-  // Technical Events (14, 15)
-  { title: "GDG Techsprint", file: "gdg techsprint hackathon.pdf", type: "pdf" },
-  { title: "HackerRank", file: "hackerank hackathon.png", type: "img" }
+  { title: "TCS Gen-AI Workshop", file: "tcs-gen-ai.pdf", type: "pdf", category: "AI & Workshops", date: "2026" },
+  { title: "Cyberthreya Workshop", file: "cyberthreya-workshop.pdf", type: "pdf", category: "AI & Workshops", date: "2026" },
+  { title: "AWS Cloud Foundations", file: "aws-cloud-foundations.pdf", type: "pdf", category: "Course Completion", date: "Nov 2025" },
+  { title: "AWS Academy Graduate", file: "aws-academy-graduate.png", type: "img", category: "Course Completion", date: "Nov 2025" },
+  { title: "NPTEL Cloud Computing", file: "nptel-cloud-computing.png", type: "img", category: "Course Completion", date: "Jul-Oct 2025" },
+  { title: "Quantum Fundamentals", file: "quantum-fundamentals.pdf", type: "pdf", category: "Course Completion", date: "2025-2026" },
+  { title: "Eduskills Fullstack Internship", file: "eduskills-fullstack-internship.pdf", type: "pdf", category: "Internships", date: "2026" },
+  { title: "Deloitte Technology Simulation", file: "deloitte-technology-simulation.pdf", type: "pdf", category: "Internships", date: "May 2026" },
+  { title: "GDG Techsprint Hackathon", file: "gdg-techsprint-hackathon.pdf", type: "pdf", category: "Technical Events", date: "2026" },
+  { title: "HackerRank GenZPulse", file: "hackerrank-genzpulse.png", type: "img", category: "Technical Events", date: "Jan 2026" }
 ];
 
 function openCert(idx) {
   const c = certs[idx];
-  document.getElementById('modal-date').textContent = "CERTIFICATE PREVIEW";
+  document.getElementById('modal-date').textContent = c.category.toUpperCase();
   document.getElementById('modal-title').textContent = c.title;
-  const fileUrl = encodeURI(c.file);
-
+  
   let content = "";
   if (c.type === "pdf") {
-    content = `<iframe src="${fileUrl}" width="100%" height="80vh" style="border:none; border-radius: 6px; background: #07101f;"></iframe>`;
+    content = `<iframe src="${c.file}" width="100%" height="100%" style="border:none; background: #090d18;"></iframe>`;
   } else {
-    content = `<img src="${fileUrl}" style="width: 100%; max-height: 80vh; border-radius: 6px; object-fit: contain;">`;
+    content = `<img src="${c.file}" style="width: 100%; height: 100%; object-fit: contain; background: #090d18;">`;
   }
-
-  document.getElementById('modal-body').innerHTML = content;
+  
+  document.getElementById('modal-body').innerHTML = `
+    <div class="modal-content">
+      <div class="modal-preview">${content}</div>
+      <div class="modal-side">
+        <h3>${c.title}</h3>
+        <p>Preview your certificate in full-screen style. Add the matching asset to the project folder and this will render it here directly.</p>
+        <div class="modal-meta"><span>Category: ${c.category}</span><span>Date: ${c.date}</span></div>
+      </div>
+    </div>
+  `;
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
