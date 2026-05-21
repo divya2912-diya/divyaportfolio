@@ -673,7 +673,7 @@
     }
 
     /* Blog */
-    #Experience {
+    #certifications {
       background: transparent;
     }
 
@@ -1526,7 +1526,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#works">Works</a></li>
-      <li><a href="#Experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">GET IN TOUCH</a>
@@ -1550,7 +1550,7 @@
       </p>
       <div class="hero-btns">
         <a href="#works" class="btn-primary">View My Work ↓</a>
-        <a href="#Experience" class="btn-outline">Read my Experience</a>
+        <a href="#certifications" class="btn-outline">View Certifications</a>
       </div>
     </div>
     <div class="scroll-hint">
@@ -1711,62 +1711,119 @@
     </div>
   </section>
 
-  <!-- BLOG -->
+  <!-- CERTIFICATIONS -->
   <div class="divider"></div>
-  <section id="Experience">
+  <section id="certifications">
     <div class="section-wrap" style="position:relative;">
       <div class="section-num">03</div>
       <div class="reveal">
-        <p class="section-label">The Experience</p>
+        <p class="section-label">Certifications</p>
         <h2 class="section-title">Certifications <span class="hl">&</span> Achievements</h2>
       </div>
+
+      <p class="section-label reveal">AI & Workshops</p>
       <div class="Experience-grid">
-        <div class="Experience-card reveal" onclick="openPost(0)">
-          <div class="Experience-date">MAY 12, 2026 · 8 MIN READ</div>
-          <h3 class="Experience-title">Why Every Developer Should Learn GLSL in 2026</h3>
-          <p class="Experience-excerpt">Fragment shaders have become the new CSS — once esoteric, now essential for
-            anyone building memorable web experiences.</p>
-          <div class="Experience-read">Read Article →</div>
+        <div class="Experience-card reveal" onclick="openCert(0)">
+          <div class="Experience-date">WORKSHOP</div>
+          <h3 class="Experience-title">TCS Gen-AI</h3>
+          <p class="Experience-excerpt">AI workshop certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
         </div>
-
-        <div class="Experience-card reveal" onclick="openPost(1)">
-          <div class="Experience-date">APR 28, 2026 · 6 MIN READ</div>
-          <h3 class="Experience-title">The Art of Micro-Interaction: When Less Is Everything</h3>
-          <p class="Experience-excerpt">A 200ms animation done right will do more for user trust than any feature
-            roadmap. Here's how I think about it.</p>
-          <div class="Experience-read">Read Article →</div>
+        <div class="Experience-card reveal" onclick="openCert(1)">
+          <div class="Experience-date">WORKSHOP</div>
+          <h3 class="Experience-title">Cyberthreya Workshop</h3>
+          <p class="Experience-excerpt">Cybersecurity workshop certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
         </div>
+      </div>
 
-        <div class="Experience-card reveal" onclick="openPost(2)">
-          <div class="Experience-date">APR 10, 2026 · 12 MIN READ</div>
-          <h3 class="Experience-title">Building a Spatial UI with React Three Fiber</h3>
-          <p class="Experience-excerpt">A deep dive into creating fully 3D interfaces inside the React ecosystem without
-            touching vanilla WebGL once.</p>
-          <div class="Experience-read">Read Article →</div>
+      <p class="section-label reveal">Technical Events</p>
+      <div class="Experience-grid">
+        <div class="Experience-card reveal" onclick="openCert(2)">
+          <div class="Experience-date">HACKATHON</div>
+          <h3 class="Experience-title">GDG Techsprint</h3>
+          <p class="Experience-excerpt">Hackathon participation certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
         </div>
-
-        <div class="Experience-card reveal" onclick="openPost(3)">
-          <div class="Experience-date">MAR 25, 2026 · 5 MIN READ</div>
-          <h3 class="Experience-title">Typography in the Dark: Pairing Fonts for Night Interfaces</h3>
-          <p class="Experience-excerpt">Dark mode isn't just inverted colors. The fonts that shine on white collapse in
-            darkness — here's what works instead.</p>
-          <div class="Experience-read">Read Article →</div>
+        <div class="Experience-card reveal" onclick="openCert(3)">
+          <div class="Experience-date">HACKATHON</div>
+          <h3 class="Experience-title">HackerRank GenZPulse</h3>
+          <p class="Experience-excerpt">Hackathon participation certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
         </div>
+      </div>
 
-        <div class="Experience-card reveal" onclick="openPost(4)">
-          <div class="Experience-date">MAR 8, 2026 · 9 MIN READ</div>
-          <h3 class="Experience-title">Instanced Meshes: Rendering 100,000 Objects in WebGL</h3>
-          <p class="Experience-excerpt">Performance deep-dive: how I rendered a 100k-point globe dataset at 60fps using
-            instanced geometry and smart LOD.</p>
-          <div class="Experience-read">Read Article →</div>
+      <p class="section-label reveal">Course Completions</p>
+      <div class="Experience-grid">
+        <div class="Experience-card reveal" onclick="openCert(4)">
+          <div class="Experience-date">COURSE</div>
+          <h3 class="Experience-title">AWS Cloud Foundations</h3>
+          <p class="Experience-excerpt">Course completion certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
         </div>
+        <div class="Experience-card reveal" onclick="openCert(5)">
+          <div class="Experience-date">BADGE</div>
+          <h3 class="Experience-title">AWS Academy Graduate</h3>
+          <p class="Experience-excerpt">AWS academy training badge.</p>
+          <div class="Experience-read">View Certificate →</div>
+        </div>
+        <div class="Experience-card reveal" onclick="openCert(6)">
+          <div class="Experience-date">COURSE</div>
+          <h3 class="Experience-title">Cisco Python</h3>
+          <p class="Experience-excerpt">Course completion certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
+        </div>
+        <div class="Experience-card reveal" onclick="openCert(7)">
+          <div class="Experience-date">COURSE</div>
+          <h3 class="Experience-title">Cisco C Language Part 1</h3>
+          <p class="Experience-excerpt">Course completion certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
+        </div>
+        <div class="Experience-card reveal" onclick="openCert(8)">
+          <div class="Experience-date">COURSE</div>
+          <h3 class="Experience-title">Cisco C Language Part 2</h3>
+          <p class="Experience-excerpt">Course completion certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
+        </div>
+        <div class="Experience-card reveal" onclick="openCert(9)">
+          <div class="Experience-date">COURSE</div>
+          <h3 class="Experience-title">Infosys Python Foundation</h3>
+          <p class="Experience-excerpt">Course completion certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
+        </div>
+        <div class="Experience-card reveal" onclick="openCert(10)">
+          <div class="Experience-date">COURSE</div>
+          <h3 class="Experience-title">Infosys Information Security</h3>
+          <p class="Experience-excerpt">Course completion certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
+        </div>
+        <div class="Experience-card reveal" onclick="openCert(11)">
+          <div class="Experience-date">COURSE</div>
+          <h3 class="Experience-title">Python OneRoadmap</h3>
+          <p class="Experience-excerpt">Course completion certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
+        </div>
+        <div class="Experience-card reveal" onclick="openCert(12)">
+          <div class="Experience-date">COURSE</div>
+          <h3 class="Experience-title">Quantum Fundamentals</h3>
+          <p class="Experience-excerpt">Course completion certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
+        </div>
+      </div>
 
-        <div class="Experience-card reveal" onclick="openPost(5)">
-          <div class="Experience-date">FEB 19, 2026 · 7 MIN READ</div>
-          <h3 class="Experience-title">Designing for the Empty State: Making Nothing Feel Intentional</h3>
-          <p class="Experience-excerpt">The moments when your UI has nothing to show are the biggest trust-building
-            opportunities you're probably wasting.</p>
-          <div class="Experience-read">Read Article →</div>
+      <p class="section-label reveal">Internship Certificates</p>
+      <div class="Experience-grid">
+        <div class="Experience-card reveal" onclick="openCert(13)">
+          <div class="Experience-date">INTERNSHIP</div>
+          <h3 class="Experience-title">Eduskills Fullstack</h3>
+          <p class="Experience-excerpt">Internship completion certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
+        </div>
+        <div class="Experience-card reveal" onclick="openCert(14)">
+          <div class="Experience-date">INTERNSHIP</div>
+          <h3 class="Experience-title">Deloitte Technology Simulation</h3>
+          <p class="Experience-excerpt">Internship completion certificate.</p>
+          <div class="Experience-read">View Certificate →</div>
         </div>
       </div>
     </div>
@@ -2163,6 +2220,39 @@
       }
     ];
 
+    const certs = [
+      { title: "TCS Gen-AI", file: "tcs gen-ai.pdf", type: "pdf", category: "AI & Workshops", date: "May 2026" },
+      { title: "Cyberthreya Workshop", file: "cyberthreya.pdf", type: "pdf", category: "AI & Workshops", date: "2026" },
+      { title: "GDG Techsprint Hackathon", file: "gdg techsprint hackathon.pdf", type: "pdf", category: "Technical Events", date: "2026" },
+      { title: "HackerRank GenZPulse", file: "hackerank hackathon.png", type: "img", category: "Technical Events", date: "Jan 2026" },
+      { title: "AWS Cloud Foundations", file: "AWS Cloud Foundations Certificate.pdf", type: "pdf", category: "Course Completions", date: "Nov 2025" },
+      { title: "AWS Academy Graduate", file: "aws-academy-graduate-cloud-foundations-training-bad.png", type: "img", category: "Course Completions", date: "Nov 2025" },
+      { title: "Cisco Python", file: "cisco python.pdf", type: "pdf", category: "Course Completions", date: "2026" },
+      { title: "Cisco C Language Part 1", file: "cisco c lang1.pdf", type: "pdf", category: "Course Completions", date: "2026" },
+      { title: "Cisco C Language Part 2", file: "cisco c lang2.pdf", type: "pdf", category: "Course Completions", date: "2026" },
+      { title: "Infosys Python Foundation", file: "infosys springboard - python foundation.pdf", type: "pdf", category: "Course Completions", date: "2026" },
+      { title: "Infosys Information Security", file: "infosys springboard - informational security.pdf", type: "pdf", category: "Course Completions", date: "2026" },
+      { title: "Python OneRoadmap", file: "Python-Certificate oneroadmap.pdf", type: "pdf", category: "Course Completions", date: "2026" },
+      { title: "Quantum Fundamentals", file: "quantum computing.pdf", type: "pdf", category: "Course Completions", date: "2026" },
+      { title: "Eduskills Fullstack", file: "eduskills_pyp_fullstack_Certificate.pdf", type: "pdf", category: "Internship Certificates", date: "2026" },
+      { title: "Deloitte Technology Simulation", file: "deloitte certify.pdf", type: "pdf", category: "Internship Certificates", date: "May 2026" }
+    ];
+
+    function openCert(idx) {
+      const c = certs[idx];
+      document.getElementById('modal-date').textContent = c.category.toUpperCase();
+      document.getElementById('modal-title').textContent = c.title;
+      let content = '';
+      if (c.type === 'pdf') {
+        content = `<iframe src="${encodeURI(c.file)}" width="100%" height="100%" style="border:none; background: #090d18;"></iframe>`;
+      } else {
+        content = `<img src="${encodeURI(c.file)}" style="width:100%; height:100%; object-fit:contain; background:#090d18;">`;
+      }
+      document.getElementById('modal-body').innerHTML = content;
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
     function openPost(idx) {
       const p = posts[idx];
       document.getElementById('modal-date').textContent = p.date;
@@ -2220,7 +2310,7 @@
       btt.classList.toggle('show', window.scrollY > 400);
 
       // Active nav link
-      const sections = ['hero', 'about', 'works', 'blog', 'contact'];
+      const sections = ['hero', 'about', 'works', 'certifications', 'contact'];
       let current = 'hero';
       sections.forEach(id => {
         const el = document.getElementById(id);
