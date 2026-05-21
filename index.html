@@ -1028,6 +1028,28 @@
       font-style: italic;
       color: rgba(232, 234, 246, 0.75);
       line-height: 1.9;
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .modal-body img,
+    .modal-body iframe {
+      width: 100%;
+      max-height: 70vh;
+      height: auto;
+      border-radius: 10px;
+      background: #090d18;
+    }
+
+    .modal-error {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      text-align: center;
+      padding: 2rem;
+      line-height: 1.6;
     }
 
     .carousel {
@@ -2328,15 +2350,34 @@
       if (c.type === 'carousel') {
         modalCarouselCert = c;
         renderCarousel();
-      } else {
+        document.getElementById('modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+        return;
+      }
+
+      const fileUrl = encodeURI(c.file);
+      const renderFile = () => {
         let content = '';
         if (c.type === 'pdf') {
-          content = `<iframe src="${encodeURI(c.file)}" width="100%" height="100%" style="border:none; background: #090d18;"></iframe>`;
+          content = `<iframe src="${fileUrl}" width="100%" height="70vh" style="border:none; background: #090d18;"></iframe>`;
         } else {
-          content = `<img src="${encodeURI(c.file)}" style="width:100%; height:100%; object-fit:contain; background:#090d18;">`;
+          content = `<img src="${fileUrl}" style="width:100%; max-height:70vh; object-fit:contain; background:#090d18;">`;
         }
         document.getElementById('modal-body').innerHTML = content;
-      }
+      };
+
+      const showMissingFile = () => {
+        document.getElementById('modal-body').innerHTML = `
+          <div class="modal-error">
+            Certificate asset not found: <strong>${c.file}</strong>.<br>
+            Please add the file to your project root or update the file path.
+          </div>
+        `;
+      };
+
+      fetch(fileUrl, { method: 'HEAD' })
+        .then(response => response.ok ? renderFile() : showMissingFile())
+        .catch(() => showMissingFile());
 
       document.getElementById('modal').classList.add('open');
       document.body.style.overflow = 'hidden';
