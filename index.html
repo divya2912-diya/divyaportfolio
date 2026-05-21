@@ -2520,22 +2520,62 @@
       ticker.innerHTML = makeItems() + makeItems();
     }
 
-    // ─── Contact form mock submit ───────────────────────────────────────────────
+    // ─── Contact form submit ────────────────────────────────────────────────────
     function submitForm() {
       const name = document.getElementById('cf-name').value.trim();
       const email = document.getElementById('cf-email').value.trim();
       const msg = document.getElementById('cf-msg').value.trim();
+      const btn = document.querySelector('.cf-btn');
+
+      // Reset border colors
+      [document.getElementById('cf-name'), document.getElementById('cf-email'), document.getElementById('cf-msg')]
+        .forEach(el => el.style.borderColor = 'var(--border)');
+
       if (!name || !email || !msg) {
         [document.getElementById('cf-name'), document.getElementById('cf-email'), document.getElementById('cf-msg')]
           .forEach(el => { if (!el.value.trim()) el.style.borderColor = 'rgba(239,68,68,0.5)'; });
         return;
       }
-      const succ = document.getElementById('cf-success');
-      succ.style.display = 'block';
-      document.getElementById('cf-name').value = '';
-      document.getElementById('cf-email').value = '';
-      document.getElementById('cf-msg').value = '';
-      setTimeout(() => { succ.style.display = 'none'; }, 5000);
+
+      const originalText = btn.innerHTML;
+      btn.innerHTML = 'SENDING...';
+      btn.style.pointerEvents = 'none';
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            access_key: "83343b98-39fa-4fdf-bf14-0bd6ff5944f7",
+            name: name,
+            email: email,
+            message: msg
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          const succ = document.getElementById('cf-success');
+          succ.style.display = 'block';
+          document.getElementById('cf-name').value = '';
+          document.getElementById('cf-email').value = '';
+          document.getElementById('cf-msg').value = '';
+          setTimeout(() => { succ.style.display = 'none'; }, 5000);
+        } else {
+          console.error(data);
+          alert("Oops! Something went wrong. Make sure your Web3Forms access key is configured.");
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Oops! Something went wrong while sending the message.");
+      })
+      .finally(() => {
+        btn.innerHTML = originalText;
+        btn.style.pointerEvents = 'auto';
+      });
     }
 
     // ─── Copy email and redirect to mail client ──────────────────────────────────
