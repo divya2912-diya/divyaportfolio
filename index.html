@@ -2540,6 +2540,7 @@
 
     // ─── Copy email and redirect to mail client ──────────────────────────────────
     function copyEmailAndRedirect(event) {
+      event.preventDefault();
       const email = "divyasreeb29@gmail.com";
       
       // Copy to clipboard
@@ -2553,8 +2554,10 @@
         toast = document.createElement('div');
         toast.id = 'email-toast';
         toast.className = 'toast';
-        toast.innerHTML = `<span class="toast-icon">🚀</span><span>Email copied to clipboard! Opening mail application...</span>`;
+        toast.innerHTML = `<span class="toast-icon">🚀</span><span>Email copied! Opening Gmail...</span>`;
         document.body.appendChild(toast);
+      } else {
+        toast.innerHTML = `<span class="toast-icon">🚀</span><span>Email copied! Opening Gmail...</span>`;
       }
       
       toast.classList.remove('show');
@@ -2565,6 +2568,9 @@
       setTimeout(() => {
         toast.classList.remove('show');
       }, 3500);
+
+      // Open Gmail web composer directly in a new tab
+      window.open("https://mail.google.com/mail/?view=cm&fs=1&to=" + email, "_blank");
     }
   </script>
 </body>
