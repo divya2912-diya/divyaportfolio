@@ -1592,6 +1592,39 @@
         display: none;
       }
     }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translate(-50%, 100px);
+      background: rgba(15, 22, 42, 0.85);
+      border: 1px solid rgba(79, 124, 255, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      z-index: 10000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+    .toast-icon {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 
@@ -1916,7 +1949,7 @@
       <p class="contact-label reveal">Let's Talk</p>
       <h2 class="contact-title reveal">Got a project<br><em>in mind?</em></h2>
       <p class="contact-sub reveal">I'm currently available for freelance work<br>and interesting collaborations.</p>
-      <a href="mailto:divyasreeb29@gmail.com" class="contact-email reveal">divyasreeb29@gmail.com ↗</a>
+      <a href="mailto:divyasreeb29@gmail.com" onclick="copyEmailAndRedirect(event)" class="contact-email reveal">divyasreeb29@gmail.com ↗</a>
 
       <div class="contact-form-wrap reveal">
         <input class="cf-input" type="text" placeholder="Your name" id="cf-name">
@@ -1929,7 +1962,7 @@
       <div class="social-links reveal" style="margin-top:2.5rem;">
         <a href="https://github.com/divya2912-diya" class="social-link">GitHub</a>
         <a href="https://www.linkedin.com/in/divya-sree-busayavalasa-031308352/" class="social-link">LinkedIn</a>
-        <a href="mailto:divyasreeb29@gmail.com" class="social-link">Email</a>
+        <a href="mailto:divyasreeb29@gmail.com" onclick="copyEmailAndRedirect(event)" class="social-link">Email</a>
       </div>
     </div>
   </section>
@@ -2503,6 +2536,44 @@
       document.getElementById('cf-email').value = '';
       document.getElementById('cf-msg').value = '';
       setTimeout(() => { succ.style.display = 'none'; }, 5000);
+    }
+
+    // ─── Copy email and redirect to mail client ──────────────────────────────────
+    function copyEmailAndRedirect(event) {
+      event.preventDefault();
+      const email = "divyasreeb29@gmail.com";
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(email).catch(err => {
+        console.error("Failed to copy email: ", err);
+      });
+      
+      // Show toast notification
+      let toast = document.getElementById('email-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'email-toast';
+        toast.className = 'toast';
+        toast.innerHTML = `<span class="toast-icon">🚀</span><span>Email copied to clipboard! Opening mail application...</span>`;
+        document.body.appendChild(toast);
+      }
+      
+      toast.classList.remove('show');
+      toast.offsetHeight; // force reflow
+      toast.classList.add('show');
+      
+      // Attempt opening mailto in a standard way
+      const mailtoLink = document.createElement('a');
+      mailtoLink.href = 'mailto:' + email;
+      mailtoLink.style.display = 'none';
+      document.body.appendChild(mailtoLink);
+      mailtoLink.click();
+      document.body.removeChild(mailtoLink);
+      
+      // Hide toast after 3.5 seconds
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
     }
   </script>
 </body>
