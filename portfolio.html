@@ -2159,7 +2159,6 @@ function submitForm() {
 
 // ─── Copy email and redirect to mail client ──────────────────────────────────
 function copyEmailAndRedirect(event) {
-  event.preventDefault();
   const email = "divyasreeb29@gmail.com";
   
   // Copy to clipboard
@@ -2180,14 +2179,6 @@ function copyEmailAndRedirect(event) {
   toast.classList.remove('show');
   toast.offsetHeight; // force reflow
   toast.classList.add('show');
-  
-  // Attempt opening mailto in a standard way
-  const mailtoLink = document.createElement('a');
-  mailtoLink.href = 'mailto:' + email;
-  mailtoLink.style.display = 'none';
-  document.body.appendChild(mailtoLink);
-  mailtoLink.click();
-  document.body.removeChild(mailtoLink);
   
   // Hide toast after 3.5 seconds
   setTimeout(() => {
